@@ -41,7 +41,7 @@ function validateOption(object, option, level = '', type = String) {
             }
             break
         default:
-            if (typeof value !== type.name.toLowerCase()) {
+            if (typeof object[option] !== type.name.toLowerCase()) {
                 throw new Error(`${level ? level + "." : ''}${option} is not the correct datatype, expected ${type.name}`);
             }
             break;
