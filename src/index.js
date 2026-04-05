@@ -38,7 +38,7 @@ function validateOption(object, option, level = '') {
 function validateOptions(options) {
     if (!options) throw new Error('Options are not defined');
 
-    const requiredTopLevel = ['payer', 'payee', 'price', 'payment_date', 'title_code', 'title', 'due_date', 'reference'];
+    const requiredTopLevel = ['payer', 'payee', 'price', 'title_code', 'title', 'due_date', 'reference'];
     for (const field of requiredTopLevel) {
         validateOption(options, field)
     }

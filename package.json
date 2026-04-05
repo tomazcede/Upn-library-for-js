@@ -2,7 +2,7 @@
   "name": "upn-library-v2",
   "version": "1.0.0",
   "main": "src/index.js",
-  "keywords": [],
+  "keywords": ["UPN", "QR", "QR code", "generation"],
   "author": "Tomaž Čede",
   "license": "ISC",
   "description": "",
