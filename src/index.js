@@ -36,7 +36,7 @@ function validateOption(object, option, level = '', type = String) {
 
     switch(type) {
         case Date:
-            if (object[option] instanceof Date) {
+            if (!object[option] instanceof Date) {
                 throw new Error(`${level} ${option} is not the correct datatype`)
             }
             break
