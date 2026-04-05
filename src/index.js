@@ -34,8 +34,17 @@ function validateOption(object, option, level = '', type = String) {
         throw new Error(`${level} ${option} is not defined, define it using options.${level ? level + "." : ''}${option}`)
     }
 
-    if (typeof object[option] !== type) {
-        throw new Error(`${level} ${option} is not the correct datatype`)
+    switch(type) {
+        case Date:
+            if (object[option] instanceof Date) {
+                throw new Error(`${level} ${option} is not the correct datatype`)
+            }
+            break
+        default:
+            if (typeof value !== type.name.toLowerCase()) {
+                throw new Error(`${level ? level + "." : ''}${option} is not the correct datatype, expected ${type.name}`);
+            }
+            break;
     }
 }
 
