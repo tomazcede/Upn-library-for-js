@@ -32,7 +32,7 @@ Function params:
 
 {
   price: Number,           // *required* - amount to be paid
-  title_code: String,      // *required* - example COST
+  title_code: String,      // *required* - default COST
   title: String,           // *required* - title of the payment "Payment for x"
   due_date: Date,          // *required* - payment due date
   reference: String,       // *required* - payment reference

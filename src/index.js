@@ -13,8 +13,8 @@ function formatPrice(price) {
     return ((price * 100) + "").padStart(11, "0")
 }
 
-function formatIban(iban) {
-    return iban.replace(/\s/g, '')
+function stripSpaces(text) {
+    return text.replace(/\s/g, '')
 }
 
 function calculateControlSum(fields) {
@@ -59,24 +59,24 @@ export async function generateUPNQR(options, size = 300) {
 
     let fields = [
         "UPNQR",
-        formatIban(options.payer.iban ?? ""),
+        stripSpaces(options.payer.iban ?? ""),
         "",
         "",
         "",
-        options.payer.name + " " + options.payer.surname + "",
+        `${options.payer.name} ${options.payer.surname}`,
         options.payer.address + "",
-        options.payer.zip + " " + options.payer.city + "",
+        `${options.payer.zip} ${options.payer.city}`,
         formatPrice(options.price) + "",
         formatDate(options.payment_date),
         "",
         options.title_code ?? 'COST',
         options.title  + "",
         formatDate(options.due_date) + "",
-        formatIban(options.payee.iban) + "",
-        options.reference + "",
+        stripSpaces(options.payee.iban) + "",
+        stripSpaces(options.reference) + "",
         options.payee.title + "",
         options.payee.address + "",
-        options.payee.zip + " " + options.payee.city +  "",
+        `${options.payee.zip} ${options.payee.city}`
     ]
 
     let text = generateText(fields)
