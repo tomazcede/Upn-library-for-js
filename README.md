@@ -1,2 +1,3 @@
-# Upn-library-for-js
-A simple JS library for generating UPN QR codes using the QrCode js library
+# upn-library
+
+A simple JS library for creating UPN QR codes using the https://www.npmjs.com/package/qrcode pakage

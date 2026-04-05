@@ -1,0 +1,15 @@
+{
+  "name": "upn-library-v2",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "keywords": [],
+  "author": "Tomaž Čede",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "vite": "^8.0.3"
+  }
+}
